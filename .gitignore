@@ -1,0 +1,34 @@
+# 环境变量（绝对不能提交）
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.Python
+build/
+dist/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# 测试与缓存
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# 项目运行产物
+*.log
+chroma_db/
+eval/results/
