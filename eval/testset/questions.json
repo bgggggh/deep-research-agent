@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "version": "1.1",
+    "total": 50,
+    "changelog": "v1.1 收紧 expected_keywords：去掉 'context' 'AI' 'GPU' 等过通用词，每条只保留 1-2 个高区分度关键词；增加 'all_required' 标志要求全部命中。",
+    "difficulty_distribution": {
+      "easy_factual": 18,
+      "medium_reasoning": 20,
+      "hard_synthesis": 12
+    },
+    "topic_distribution": {
+      "ai_tech": 20,
+      "business_finance": 15,
+      "science_general": 15
+    }
+  },
+
+  "questions": [
+    { "id": "Q01", "difficulty": "easy",   "topic": "ai_tech",          "question": "Llama 3.1 70B 的最大上下文长度是多少 tokens？", "expected_keywords": ["128K", "128000"], "all_required": false },
+    { "id": "Q02", "difficulty": "easy",   "topic": "ai_tech",          "question": "DeepSeek V3 的总参数量和单次激活参数量分别是多少？", "expected_keywords": ["671B", "37B"], "all_required": true },
+    { "id": "Q03", "difficulty": "easy",   "topic": "ai_tech",          "question": "Anthropic 公司的总部在哪个城市？", "expected_keywords": ["旧金山", "San Francisco"], "all_required": false },
+    { "id": "Q04", "difficulty": "easy",   "topic": "ai_tech",          "question": "OpenAI 在哪一年发布了 GPT-4o 模型？", "expected_keywords": ["2024年5月", "2024 May", "May 2024"], "all_required": false },
+    { "id": "Q05", "difficulty": "easy",   "topic": "ai_tech",          "question": "BGE-M3 是哪个研究机构开源的？", "expected_keywords": ["智源", "BAAI"], "all_required": false },
+    { "id": "Q06", "difficulty": "easy",   "topic": "ai_tech",          "question": "LangGraph 框架是 LangChain 团队开发的吗？", "expected_keywords": ["LangChain", "同一团队"], "all_required": false },
+    { "id": "Q07", "difficulty": "easy",   "topic": "ai_tech",          "question": "Python 3.13 是哪一年正式发布的？", "expected_keywords": ["2024年10月", "October 2024"], "all_required": false },
+    { "id": "Q08", "difficulty": "easy",   "topic": "business_finance", "question": "OpenAI 在 2024 年 10 月融资后的估值是多少美元？", "expected_keywords": ["1570亿", "157", "$157B"], "all_required": false },
+    { "id": "Q09", "difficulty": "easy",   "topic": "business_finance", "question": "微软累计向 OpenAI 投资了多少美元？", "expected_keywords": ["130亿", "13B", "$13"], "all_required": false },
+    { "id": "Q10", "difficulty": "easy",   "topic": "business_finance", "question": "字节跳动旗下的大模型对话产品叫什么？", "expected_keywords": ["豆包", "Doubao"], "all_required": false },
+    { "id": "Q11", "difficulty": "easy",   "topic": "business_finance", "question": "百度的大模型系列叫什么名字？", "expected_keywords": ["文心", "ERNIE"], "all_required": false },
+    { "id": "Q12", "difficulty": "easy",   "topic": "business_finance", "question": "阿里巴巴开源的大模型系列叫什么名字？", "expected_keywords": ["通义千问", "Qwen"], "all_required": false },
+    { "id": "Q13", "difficulty": "easy",   "topic": "science_general",  "question": "光速在真空中的精确数值是多少 m/s？", "expected_keywords": ["299792458", "299,792,458"], "all_required": false },
+    { "id": "Q14", "difficulty": "easy",   "topic": "science_general",  "question": "中国科学院和中国工程院是同一个机构吗？", "expected_keywords": ["不是", "独立"], "all_required": false },
+    { "id": "Q15", "difficulty": "easy",   "topic": "science_general",  "question": "2024 年诺贝尔物理学奖的获奖者是谁？", "expected_keywords": ["Hopfield", "Hinton"], "all_required": true },
+    { "id": "Q16", "difficulty": "easy",   "topic": "science_general",  "question": "2024 年图灵奖的获奖者是谁？", "expected_keywords": ["Wigderson"], "all_required": false },
+    { "id": "Q17", "difficulty": "easy",   "topic": "science_general",  "question": "ChatGPT 基于的 Transformer 架构是 encoder-only、decoder-only 还是 encoder-decoder？", "expected_keywords": ["decoder-only", "decoder only"], "all_required": false },
+    { "id": "Q18", "difficulty": "easy",   "topic": "science_general",  "question": "ChromaDB 主要用什么编程语言开发？", "expected_keywords": ["Python"], "all_required": false },
+
+    { "id": "Q19", "difficulty": "medium", "topic": "ai_tech",          "question": "Llama 3.1 70B 与 DeepSeek V3 在推理成本上有什么差异？为什么？", "expected_keywords": ["MoE", "稀疏激活", "更低"], "all_required": false },
+    { "id": "Q20", "difficulty": "medium", "topic": "ai_tech",          "question": "Claude 3.5 Sonnet 在编程基准 HumanEval 上的得分大约是多少？", "expected_keywords": ["92", "93"], "all_required": false },
+    { "id": "Q21", "difficulty": "medium", "topic": "ai_tech",          "question": "ColBERT 检索方法的核心思想是什么？", "expected_keywords": ["late interaction", "多向量", "token级"], "all_required": false },
+    { "id": "Q22", "difficulty": "medium", "topic": "ai_tech",          "question": "RAG 系统中为什么 BM25 和向量检索要混合使用？", "expected_keywords": ["互补", "精确匹配", "语义"], "all_required": false },
+    { "id": "Q23", "difficulty": "medium", "topic": "ai_tech",          "question": "LangGraph 相比 LangChain Agent 的核心创新是什么？", "expected_keywords": ["状态机", "条件路由", "graph"], "all_required": false },
+    { "id": "Q24", "difficulty": "medium", "topic": "ai_tech",          "question": "Anthropic 推出的 MCP 协议解决了什么核心问题？", "expected_keywords": ["工具", "标准化", "互操作"], "all_required": false },
+    { "id": "Q25", "difficulty": "medium", "topic": "ai_tech",          "question": "Mixture-of-Experts 模型中的 router 是怎么工作的？", "expected_keywords": ["路由", "选择专家", "gating"], "all_required": false },
+    { "id": "Q26", "difficulty": "medium", "topic": "ai_tech",          "question": "为什么 Transformer 比 RNN 更适合处理长序列？", "expected_keywords": ["并行", "自注意力", "长距离"], "all_required": false },
+    { "id": "Q27", "difficulty": "medium", "topic": "business_finance", "question": "2024 年中国大模型公司有哪些主要的商业化路径？", "expected_keywords": ["API", "私有化部署", "SaaS"], "all_required": false },
+    { "id": "Q28", "difficulty": "medium", "topic": "business_finance", "question": "为什么 2024 年中国大模型 API 价格出现激烈降价？", "expected_keywords": ["竞争", "降价", "市场份额"], "all_required": false },
+    { "id": "Q29", "difficulty": "medium", "topic": "business_finance", "question": "对比 OpenAI 和 Anthropic 的主要投资方与融资策略。", "expected_keywords": ["微软", "亚马逊", "Google"], "all_required": false },
+    { "id": "Q30", "difficulty": "medium", "topic": "business_finance", "question": "Nvidia 在 AI 芯片领域的核心护城河是什么？", "expected_keywords": ["CUDA", "生态", "软件栈"], "all_required": false },
+    { "id": "Q31", "difficulty": "medium", "topic": "business_finance", "question": "为什么大模型 API 普遍以 token 而非请求数定价？", "expected_keywords": ["成本", "粒度", "公平"], "all_required": false },
+    { "id": "Q32", "difficulty": "medium", "topic": "business_finance", "question": "金融行业落地大模型最大的挑战是什么？", "expected_keywords": ["合规", "数据隐私", "幻觉"], "all_required": false },
+    { "id": "Q33", "difficulty": "medium", "topic": "business_finance", "question": "为什么很多 AI 公司选择开源模型作为商业策略？", "expected_keywords": ["生态", "影响力", "开发者"], "all_required": false },
+    { "id": "Q34", "difficulty": "medium", "topic": "science_general",  "question": "量子计算机相比经典计算机在哪些类问题上有指数级优势？", "expected_keywords": ["分解", "搜索", "Shor", "Grover"], "all_required": false },
+    { "id": "Q35", "difficulty": "medium", "topic": "science_general",  "question": "mRNA 疫苗与传统灭活疫苗的工作机制有何不同？", "expected_keywords": ["mRNA", "翻译", "蛋白质"], "all_required": false },
+    { "id": "Q36", "difficulty": "medium", "topic": "science_general",  "question": "CRISPR-Cas9 基因编辑的工作原理是什么？", "expected_keywords": ["Cas9", "切割", "guide RNA"], "all_required": false },
+    { "id": "Q37", "difficulty": "medium", "topic": "science_general",  "question": "SpaceX 猎鹰火箭如何实现回收复用？", "expected_keywords": ["着陆", "降落", "格栅翼"], "all_required": false },
+    { "id": "Q38", "difficulty": "medium", "topic": "science_general",  "question": "可控核聚变商业化的最大技术障碍是什么？", "expected_keywords": ["净能量增益", "约束", "材料"], "all_required": false },
+
+    { "id": "Q39", "difficulty": "hard",   "topic": "ai_tech",          "question": "分析 Multi-Agent 系统相比 Single-Agent 的核心优势与代价，并说明在哪些场景下 Multi-Agent 反而是劣势。", "expected_keywords": ["分工", "协调成本", "延迟", "简单任务"], "all_required": false },
+    { "id": "Q40", "difficulty": "hard",   "topic": "ai_tech",          "question": "评估当前 RAG 技术栈最大的瓶颈，以及未来 1-2 年可能的突破方向。", "expected_keywords": ["chunking", "long context", "幻觉", "评测"], "all_required": false },
+    { "id": "Q41", "difficulty": "hard",   "topic": "ai_tech",          "question": "对比开源大模型（Llama/Qwen/DeepSeek）与闭源大模型（GPT/Claude）的发展路径，预测 2026 年的市场格局。", "expected_keywords": ["开源", "闭源", "差距", "成本"], "all_required": false },
+    { "id": "Q42", "difficulty": "hard",   "topic": "ai_tech",          "question": "AI Agent 在企业生产环境落地还面临哪些核心工程挑战？", "expected_keywords": ["可靠性", "评测", "可观测", "成本"], "all_required": false },
+    { "id": "Q43", "difficulty": "hard",   "topic": "ai_tech",          "question": "评估端侧（手机/笔记本）大模型的技术现状以及未来三年的可能突破。", "expected_keywords": ["量化", "推理优化", "硬件加速"], "all_required": false },
+    { "id": "Q44", "difficulty": "hard",   "topic": "business_finance", "question": "分析 2024-2025 年 AI 创业公司估值泡沫风险，列出关键观察指标。", "expected_keywords": ["营收倍数", "烧钱率", "PMF"], "all_required": false },
+    { "id": "Q45", "difficulty": "hard",   "topic": "business_finance", "question": "对比中美 AI 算力供应链格局的差异及其战略影响。", "expected_keywords": ["GPU", "出口管制", "国产化"], "all_required": false },
+    { "id": "Q46", "difficulty": "hard",   "topic": "business_finance", "question": "评估开源模型对闭源 SaaS 公司的长期商业冲击。", "expected_keywords": ["替代", "护城河", "差异化"], "all_required": false },
+    { "id": "Q47", "difficulty": "hard",   "topic": "business_finance", "question": "AI 应用层公司应该自研模型还是基于现有 API 开发？讨论决策框架。", "expected_keywords": ["差异化", "成本", "微调", "数据飞轮"], "all_required": false },
+    { "id": "Q48", "difficulty": "hard",   "topic": "science_general",  "question": "讨论强人工智能（AGI）实现的主要路径以及可能的时间表。", "expected_keywords": ["scaling law", "推理", "多模态"], "all_required": false },
+    { "id": "Q49", "difficulty": "hard",   "topic": "science_general",  "question": "评估自动驾驶 L4 大规模商业化的技术障碍和监管挑战。", "expected_keywords": ["L4", "长尾场景", "责任界定"], "all_required": false },
+    { "id": "Q50", "difficulty": "hard",   "topic": "science_general",  "question": "分析气候变化对 AI 数据中心选址和能源策略的影响。", "expected_keywords": ["液冷", "可再生能源", "PUE"], "all_required": false }
+  ]
+}

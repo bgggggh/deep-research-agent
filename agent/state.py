@@ -2,10 +2,9 @@
 agent/state.py
 LangGraph 全局状态 —— 所有 Agent 节点共享同一个 State 对象
 
-使用 TypedDict 是 LangGraph 的惯用法：
-- 节点函数接收/返回 dict
-- 字段类型有静态检查
-- 不需要 dataclass 那一套 __dict__ 操作
+Stage 3 新增字段：
+- retrieved_chunks: Retriever 检索到的 chunks（按子问题分组）
+- need_web_search: 哪些子问题需要走 web search（RAG 不足）
 """
 from typing import TypedDict, Annotated
 from langgraph.graph.message import add_messages
@@ -18,6 +17,15 @@ class ResearchState(TypedDict, total=False):
     # ── Planner 产出 ──────────────────────────────────────
     research_plan: list[str]                # 分解出的子问题列表
     current_step: int                       # 当前执行到第几个子问题
+
+    # ── Retriever 产出（Stage 3 新增）──────────────────────
+    retrieved_chunks: list[dict]
+    # 每条格式: {"sub_query": str, "parent_text": str, "child_text": str,
+    #           "namespace": str, "score": float, "metadata": dict}
+
+    need_web_search: list[bool]
+    # 每个子问题是否需要 web search（True=需要，False=RAG足够）
+    # 长度与 research_plan 一致
 
     # ── Searcher 产出 ─────────────────────────────────────
     search_results: list[dict]
